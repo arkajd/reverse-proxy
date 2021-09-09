@@ -1,0 +1,11 @@
+server:
+  port: 8083
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: users
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/api/v1/users/**
